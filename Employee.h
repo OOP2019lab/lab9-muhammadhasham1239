@@ -8,22 +8,18 @@ using namespace std;
 #define EMPLOYEE_H
 class Employee
 {
-	char* emp_name; 
-	//Add Data Members here
-	
+	char* empname;
+	int noofprojects;
+	Address *A;
+	Project **P;
+
 public:
-	Employee(char* name, const Address&);
-	//overloaded constructor
-	Employee(const Employee&);
-	//copy constructor
-	friend ostream& operator<<(ostream& osObject, const Employee&);
-	//overloaded insertion operator
-	const Employee &   operator=(const Employee& other);
-	//overloaded assignment operator
-
-	void addProject(Project const * );
-	void removeProject(Project const * ); 
-
+	Employee(char* name, const Address& a);
+	Employee(const Employee& b);
+	friend ostream& operator<<(ostream& A, const Employee& b);
+	const Employee &   operator=(const Employee& b);
+	void addProject(Project const *p );
+	void removeProject(Project const *p ); 
 	~Employee();
 
 }; 

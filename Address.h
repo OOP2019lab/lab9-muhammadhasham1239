@@ -7,20 +7,16 @@ using namespace std;
 #define ADDRESS_H
 class Address
 {
-	char* house_Number;
-	char* street_Name ;
+	char* housenumber;
+	char* streetname ;
 	char * city;
-	char* county;
+	char* country;
 
 public:
-	Address(char* house_Number, char* Street_Name, char * City,char* County);
-	// an overloaded constructor
-	Address(const Address&);
-	//copy constructor
-	friend ostream& operator<<(ostream& osObject, const Address&);
-	//overloaded insertion operator
-	const Address &   operator=(const Address& other);
-	//overloaded assignment operator
+	Address(char* housenumber, char* streetname, char * city,char* county);
+	Address(const Address& a);
+	friend ostream& operator<<(ostream& A, const Address&);
+	const Address& operator=(const Address& other);
 	~Address();
 };
 #endif
